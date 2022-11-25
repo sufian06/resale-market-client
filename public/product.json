@@ -2,11 +2,11 @@
   {
     "id": 1,
     "category": "Honda",
-    "image": "https://ibb.co/GQkT0vV",
+    "img": "https://i.ibb.co/4s96qS8/honda.jpg",
     "products": [
       {
         "name": "Honda CB Trigger",
-        "image": "https://ibb.co/GQkT0vV",
+        "image": "https://i.ibb.co/4s96qS8/honda.jpg",
         "original-rice": 690,
         "resale-price": 489,
         "used": 6,
@@ -17,11 +17,11 @@
   {
     "id": 2,
     "category": "Suzuki",
-    "image": "https://ibb.co/HD1MgnT",
+    "img": "https://i.ibb.co/SXW1vRw/suzuki.jpg",
     "products": [
       {
         "name": "Suzuki CB Trigger",
-        "image": "https://ibb.co/GQkT0vV",
+        "image": "https://i.ibb.co/SXW1vRw/suzuki.jpg",
         "original-rice": 690,
         "resale-price": 489,
         "used": 6,
@@ -32,11 +32,11 @@
   {
     "id": 3,
     "category": "Yamaha",
-    "image": "https://ibb.co/GQkT0vV",
+    "img": "https://i.ibb.co/pjZyxv3/yahama.jpg",
     "products": [
       {
-        "name": "Yahama",
-        "image": "https://ibb.co/hXhP6dB",
+        "name": "Yahama FZ V3.0",
+        "image": "https://i.ibb.co/pjZyxv3/yahama.jpg",
         "original-rice": 690,
         "resale-price": 489,
         "used": 6,
