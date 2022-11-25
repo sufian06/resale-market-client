@@ -11,7 +11,7 @@ const ProductCategory = ({ product }) => {
         <h2 className="card-title">{category}</h2>
         <p>If a dog chews shoes whose shoes does he choose?</p>
         <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+          <button className="btn btn-primary">View All Bikes</button>
         </div>
       </div>
     </div>
