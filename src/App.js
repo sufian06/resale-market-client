@@ -1,17 +1,19 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
+import router from "./Routes/Routes/Routes";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl">Resale app</h1>
-      <button className="btn btn-active">Button</button>
-<button className="btn btn-active bg-primary">Button</button>
-<button className="btn btn-active btn-secondary">Button</button>
-<button className="btn btn-active btn-accent">Button</button>
-<button className="btn btn-active btn-ghost">Button</button>
-<button className="btn btn-active bg-gradient-to-r from-primary to-secondary">Button</button>
+    <div className="max-w-[1440px] mx-auto">
+      <RouterProvider router={router} />
     </div>
   );
 }
 
 export default App;
+
+/**
+ * https://ibb.co/GQkT0vV
+https://ibb.co/HD1MgnT
+https://ibb.co/hXhP6dB
+ */

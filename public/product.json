@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "category": "Honda",
+    "image": "https://ibb.co/GQkT0vV",
+    "products": [
+      {
+        "name": "Honda CB Trigger",
+        "image": "https://ibb.co/GQkT0vV",
+        "original-rice": 690,
+        "resale-price": 489,
+        "used": 6,
+        "location": "Gazipur"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Suzuki",
+    "image": "https://ibb.co/HD1MgnT",
+    "products": [
+      {
+        "name": "Suzuki CB Trigger",
+        "image": "https://ibb.co/GQkT0vV",
+        "original-rice": 690,
+        "resale-price": 489,
+        "used": 6,
+        "location": "Gazipur"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Yamaha",
+    "image": "https://ibb.co/GQkT0vV",
+    "products": [
+      {
+        "name": "Yahama",
+        "image": "https://ibb.co/hXhP6dB",
+        "original-rice": 690,
+        "resale-price": 489,
+        "used": 6,
+        "location": "Gazipur"
+      }
+    ]
+  }
+]
