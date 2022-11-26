@@ -21,7 +21,7 @@ const ProductCategory = ({ product }) => {
         </div>
         <div className="card-actions">
           <button className="btn btn-primary">
-            <Link to={`/category/${_id}`}>View All Bikes</Link>
+            <Link className="text-white" to={`/category/${_id}`}>View All Bikes</Link>
           </button>
         </div>
       </div>

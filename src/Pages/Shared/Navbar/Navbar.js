@@ -17,10 +17,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact</Link>
+        <Link to="/blog">Blog</Link>
       </li>
       {user?.uid ? (
         <>
@@ -30,11 +27,11 @@ const Navbar = () => {
         </>
       ) : (
         <li>
-          <Link>Login</Link>
+          <Link to="/login">Login</Link>
         </li>
       )}
       <li className="btn btn-primary rounded-lg">
-        <Link to="/signup">Sign Up</Link>
+        <Link className="text-white" to="/signup">Sign Up</Link>
       </li>
     </React.Fragment>
   );
