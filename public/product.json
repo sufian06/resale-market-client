@@ -5,12 +5,28 @@
     "img": "https://i.ibb.co/4s96qS8/honda.jpg",
     "products": [
       {
-        "name": "Honda CB Trigger",
-        "image": "https://i.ibb.co/4s96qS8/honda.jpg",
-        "original-rice": 690,
-        "resale-price": 489,
+        "name": "Honda 750",
+        "image": "https://i.ibb.co/CKVD0KQ/honda1.jpg",
+        "original-rice": 4500,
+        "resale-price": 2490,
         "used": 6,
         "location": "Gazipur"
+      },
+      {
+        "name": "CB250R",
+        "image": "https://i.ibb.co/PGrCLxx/honda2.jpg",
+        "original-rice": 7500,
+        "resale-price": 3587,
+        "used": 9,
+        "location": "Uttara, Dhaka"
+      },
+      {
+        "name": "Honda CBR",
+        "image": "https://i.ibb.co/6BpCr8f/honda3.jpg",
+        "original-rice": 4759,
+        "resale-price": 2265,
+        "used": 11,
+        "location": "Khilkhet, Nikunja-2"
       }
     ]
   },
@@ -20,12 +36,20 @@
     "img": "https://i.ibb.co/SXW1vRw/suzuki.jpg",
     "products": [
       {
-        "name": "Suzuki CB Trigger",
-        "image": "https://i.ibb.co/SXW1vRw/suzuki.jpg",
-        "original-rice": 690,
-        "resale-price": 489,
-        "used": 6,
-        "location": "Gazipur"
+        "name": "Suzuki GSX R",
+        "image": "https://i.ibb.co/DChyZf9/suzuki1.jpg",
+        "original-rice": 3859,
+        "resale-price": 1452,
+        "used": 2,
+        "location": "Naogaon"
+      },
+      {
+        "name": "Suzuki Gixxer 150",
+        "image": "https://i.ibb.co/DChyZf9/suzuki1.jpg",
+        "original-rice": 998,
+        "resale-price": 596,
+        "used": 3,
+        "location": "Rajshahi"
       }
     ]
   },
@@ -35,12 +59,20 @@
     "img": "https://i.ibb.co/pjZyxv3/yahama.jpg",
     "products": [
       {
-        "name": "Yahama FZ V3.0",
-        "image": "https://i.ibb.co/pjZyxv3/yahama.jpg",
-        "original-rice": 690,
-        "resale-price": 489,
-        "used": 6,
-        "location": "Gazipur"
+        "name": "Yahama R15",
+        "image": "https://i.ibb.co/kSnmwnv/yamaha1.jpg",
+        "original-rice": 2851,
+        "resale-price": 998,
+        "used": 8,
+        "location": "Gazipur Sodor"
+      },
+      {
+        "name": "Yahama MT",
+        "image": "https://i.ibb.co/cXR0tfQ/yamaha2.jpg",
+        "original-rice": 3658,
+        "resale-price": 1857,
+        "used": 12,
+        "location": "Mohakhali, Dhaka"
       }
     ]
   }
