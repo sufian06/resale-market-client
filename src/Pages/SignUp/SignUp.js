@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignUp = () => {
@@ -13,50 +13,29 @@ const SignUp = () => {
 
   const { createUser, updateUser } = useContext(AuthContext);
   const [signUpError, setSignUpError] = useState("");
-  const [createdUserEmail, setCreateUserEmail] = useState("");
-  // const [token] = useToken(createdUserEmail);
-  const navigate = useNavigate();
-
-  // if (token) {
-  //   // navigate("/");
-  // }
-
+  
   const handleSignUp = (data) => {
+    console.log(data)
     setSignUpError("");
     createUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
         console.log(user);
-        toast("User Created Successfully");
-        const userinfo = {
-          displayName: data.name,
-        };
-        updateUser(userinfo)
-          .then(() => {
-            // saveUser(data.name, data.email);
-          })
-          .catch((err) => console.error(err));
+        toast.success("User Created Successfully");
+        const userInfo = {
+          displayName: data.name
+        }
+        updateUser(userInfo)
+        .then(() => {})
+        .catch(err => console.log(err))
+        
+       
       })
       .catch((error) => {
         console.log(error);
-        setSignUpError(error.message);
+        setSignUpError(error.message)
       });
   };
-
-  // const saveUser = (name, email) => {
-  //   const user = { name, email };
-  //   fetch("https://doctors-portal-server-sooty.vercel.app/users", {
-  //     method: "POST",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(user),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setCreateUserEmail(email);
-  //     });
-  // };
 
   return (
     <div className="h-[800px] flex justify-center items-center">
@@ -118,6 +97,20 @@ const SignUp = () => {
               <p className="text-red-500">{errors.password.message}</p>
             )}
           </div>
+          <div className="form-control w-full max-w-xs">
+          <label className="label">
+              <span className="label-text">Role</span>
+            </label>
+            <select {...register("role", { required: "role is required" })} className="input input-bordered w-full max-w-xs">
+              <option value="">Select...</option>
+              <option value="seller">Seller</option>
+              <option value="buyer">Buyer</option>
+            </select>
+            {errors.role && (
+              <p className="text-red-500">{errors.role.message}</p>
+            )}
+          </div>
+
           <input
             className="btn btn-primary text-white w-full mt-4"
             value="Sign Up"

@@ -22,6 +22,9 @@ const Navbar = () => {
       {user?.uid ? (
         <>
           <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
             <button onClick={handleLogOut}>Logout</button>
           </li>
         </>
@@ -31,7 +34,9 @@ const Navbar = () => {
         </li>
       )}
       <li className="btn btn-primary rounded-lg">
-        <Link className="text-white" to="/signup">Sign Up</Link>
+        <Link className="text-white" to="/signup">
+          Sign Up
+        </Link>
       </li>
     </React.Fragment>
   );
