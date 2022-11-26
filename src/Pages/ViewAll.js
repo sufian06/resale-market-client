@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import BookingModal from '../components/BookingModal/BookingModal';
 import ProductCard from '../components/ProductCard/ProductCard';
 
 const ViewAll = () => {
@@ -10,6 +11,7 @@ const ViewAll = () => {
       {
         allproducts.map((singleProduct, i) => <ProductCard key={i} singleProduct={singleProduct} />)
       }
+      <BookingModal />
     </div>
   );
 };

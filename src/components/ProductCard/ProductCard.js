@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
 
-const ProductCard = ({singleProduct}) => {
-  const {name, image, location, originalPrice, resalePrice, used} = singleProduct;
+const ProductCard = ({ singleProduct }) => {
+  const { name, image, location, originalPrice, resalePrice, used } =
+    singleProduct;
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
       <figure>
@@ -20,11 +21,11 @@ const ProductCard = ({singleProduct}) => {
             Resale Price: ${resalePrice}
           </h4>
         </div>
-        <h4 className='text-lg font-semibold'>Used: {used} months</h4>
+        <h4 className="text-lg font-semibold">Used: {used} months</h4>
         <div className="card-actions mt-4">
-          <button className="btn btn-primary w-full text-white">
-            Book
-          </button>
+          <label htmlFor="booking-modal" className="btn btn-primary w-full text-white">
+            Book Now
+          </label>
         </div>
       </div>
     </div>
