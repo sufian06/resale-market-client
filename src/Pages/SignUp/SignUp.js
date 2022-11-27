@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
-// import useToken from "../../hooks/useToken";
+import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
   const {
@@ -14,16 +14,15 @@ const SignUp = () => {
 
   const { createUser, updateUser } = useContext(AuthContext);
   const [signUpError, setSignUpError] = useState("");
-  // const [createdUserEmail, setCreateUserEmail] = useState("");
-  // const [token] = useToken(createdUserEmail);
+  const [createdUserEmail, setCreateUserEmail] = useState("");
+  const [token] = useToken(createdUserEmail);
   const navigate = useNavigate()
 
-  // if (token) {
-  //   navigate("/");
-  // }
+  if (token) {
+    navigate("/");
+  }
   
   const handleSignUp = (data) => {
-    console.log(data)
     setSignUpError("");
     createUser(data.email, data.password)
       .then((result) => {
@@ -56,19 +55,8 @@ const SignUp = () => {
     })
     .then(res => res.json())
     .then(data => {
-      getUserToken(email)
+      setCreateUserEmail(email)
       
-    })
-  }
-
-  const getUserToken = email => {
-    fetch(`http://localhost:5000/jwt?email=${email}`)
-    .then(res => res.json())
-    .then(data => {
-      if(data.accessToken){
-        localStorage.setItem('accessToken', data.accessToken)
-        navigate('/')
-      }
     })
   }
 

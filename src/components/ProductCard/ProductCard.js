@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductCard = ({ singleProduct }) => {
+const ProductCard = ({ singleProduct, setBookingProduct }) => {
   const { name, image, location, originalPrice, resalePrice, used } =
     singleProduct;
   return (
@@ -23,7 +23,7 @@ const ProductCard = ({ singleProduct }) => {
         </div>
         <h4 className="text-lg font-semibold">Used: {used} months</h4>
         <div className="card-actions mt-4">
-          <label htmlFor="booking-modal" className="btn btn-primary w-full text-white">
+          <label onClick={() => setBookingProduct(singleProduct)} htmlFor="booking-modal" className="btn btn-primary w-full text-white">
             Book Now
           </label>
         </div>
