@@ -12,13 +12,13 @@ const ProductCard = ({ singleProduct, setBookingProduct }) => {
         <div className="flex justify-between items-center">
           <h2 className="card-title">{name}</h2>
           <h4 className="font-bold text-primary text-lg">
-            Original Price: ${originalPrice}
+            Original Price: $ {originalPrice}
           </h4>
         </div>
         <div className="flex justify-between items-center">
           <h2 className="card-title">{location}</h2>
           <h4 className="font-bold text-primary text-lg">
-            Resale Price: ${resalePrice}
+            Resale Price: $ {resalePrice}
           </h4>
         </div>
         <h4 className="text-lg font-semibold">Used: {used} months</h4>
