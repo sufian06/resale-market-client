@@ -6,7 +6,7 @@ import router from "./Routes/Routes/Routes";
 function App() {
   return (
     <div >
-      <RouterProvider router={router} />
+      <RouterProvider router={router}></RouterProvider>
       <Toaster />
     </div>
   );
@@ -14,8 +14,3 @@ function App() {
 
 export default App;
 
-/**
- * https://ibb.co/GQkT0vV
-https://ibb.co/HD1MgnT
-https://ibb.co/hXhP6dB
- */
