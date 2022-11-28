@@ -20,7 +20,7 @@ const AddProduct = () => {
   const {data: categories, isLoading} = useQuery({
     queryKey: ['category'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/productCategory')
+      const res = await fetch('https://resale-market-server-zeta.vercel.app/productCategory')
       const data = res.json();
       return data;
     }
@@ -50,7 +50,7 @@ const AddProduct = () => {
           description: data.description,
         }
         // save addedproduct information to the database
-        fetch('http://localhost:5000/addedproducts', {
+        fetch('https://resale-market-server-zeta.vercel.app/addedproducts', {
           method: 'POST',
           headers: {
             'content-type': 'application/json',

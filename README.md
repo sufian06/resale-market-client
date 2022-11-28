@@ -1,8 +1,8 @@
 # Sale x
 
-## [Client Side website](link here)
+## [Client Side website](https://resale-market-dd629.web.app/)
 
-Click here for the live website: [localhost](localhost)
+Click here for the live website: [https://resale-market-dd629.web.app/](https://resale-market-dd629.web.app/)
 
 ## Website features
 

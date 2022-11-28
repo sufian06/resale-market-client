@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/category')
+        loader: () => fetch('https://resale-market-server-zeta.vercel.app/category')
       },
       {
         path: "/blog",
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: '/category/:id',
         element: <PrivateRoute><ViewAll /></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+        loader: ({params}) => fetch(`https://resale-market-server-zeta.vercel.app/category/${params.id}`)
       },
       {
         path: "/signup",
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/payment/:id',
         element: <AdminRoute><Payment/></AdminRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/bookings/${params.id}`)
+        loader: ({params}) => fetch(`https://resale-market-server-zeta.vercel.app/bookings/${params.id}`)
       },  
     ]
   }

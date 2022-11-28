@@ -17,7 +17,7 @@ const MyProducts = () => {
     queryKey: ["addedProducts"],
     queryFn: async () => {
       try {
-        const res = await fetch("http://localhost:5000/addedproducts", {
+        const res = await fetch("https://resale-market-server-zeta.vercel.app/addedproducts", {
           headers: {
             authorization: `bearer ${localStorage.getItem("accessToken")}`,
           },
@@ -29,7 +29,7 @@ const MyProducts = () => {
   });
 
   const handleDeleteProduct = (product) => {
-    fetch(`http://localhost:5000/addedproducts/${product._id}`, {
+    fetch(`https://resale-market-server-zeta.vercel.app/addedproducts/${product._id}`, {
       method: 'DELETE',
       headers: {
         authorization: `bearer ${localStorage.getItem('accessToken')}`
