@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         element: <AdminRoute><MyProducts/></AdminRoute>
       },  
       {
-        path: '/dashboard/seller/addproduct',
+        path: '/dashboard/addproduct',
         element: <AdminRoute><AddProduct/></AdminRoute>
       },  
     ]
