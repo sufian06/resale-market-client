@@ -19,7 +19,8 @@ const ErrorPage = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       <p className="text-red-500">Something went wrong!</p>
-      <p className="text-red-400">{error.statusText || error.message}</p>
+      <h2 className="text-red-500 text-4xl">404</h2>
+      <p className="text-red-400 text-2xl">{error.statusText || error.message}</p>
       <h4 className="text-2xl">
         Please <button onClick={handleLogOut} className="text-primary font-bold">Sign out</button> and log back in
       </h4>
