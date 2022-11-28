@@ -28,6 +28,7 @@ const DashboardLayout = () => {
               {
                 isAdmin?.role === 'seller' && <>
                 <li><Link to='/dashboard/seller'>My Products</Link></li>
+                <li><Link to='/dashboard/seller/addproduct'>Add a Product</Link></li>
                 </>
               }
               {

@@ -16,12 +16,12 @@ const SignUp = () => {
   const [signUpError, setSignUpError] = useState("");
   const [createdUserEmail, setCreatedUserEmail] = useState("");
   const [token] = useToken(createdUserEmail);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   if (token) {
     navigate("/");
   }
-  
+
   const handleSignUp = (data) => {
     setSignUpError("");
     createUser(data.email, data.password)
@@ -30,37 +30,34 @@ const SignUp = () => {
         console.log(user);
         toast.success("User Created Successfully");
         const userInfo = {
-          displayName: data.name
-        }
+          displayName: data.name,
+        };
         updateUser(userInfo)
-        .then(() => {
-          saveUser(data.name, data.email, data.role);
-        })
-        .catch(err => console.log(err))             
+          .then(() => {
+            saveUser(data.name, data.email, data.role);
+          })
+          .catch((err) => console.log(err));
       })
       .catch((error) => {
         console.log(error);
-        setSignUpError(error.message)
+        setSignUpError(error.message);
       });
   };
 
   const saveUser = (name, email, role) => {
-    const user = {name, email, role}
-    fetch('http://localhost:5000/users', {
+    const user = { name, email, role };
+    fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
-        "content-type": 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(user)
+      body: JSON.stringify(user),
     })
-    .then(res => res.json())
-    .then(data => {
-      setCreatedUserEmail(email)
-      
-    })
-  }
-
-
+      .then((res) => res.json())
+      .then((data) => {
+        setCreatedUserEmail(email);
+      });
+  };
 
   return (
     <div className="h-[800px] flex justify-center items-center">
@@ -123,10 +120,13 @@ const SignUp = () => {
             )}
           </div>
           <div className="form-control w-full max-w-xs">
-          <label className="label">
+            <label className="label">
               <span className="label-text">Role</span>
             </label>
-            <select {...register("role", { required: "role is required" })} className="input input-bordered w-full max-w-xs">
+            <select
+              {...register("role", { required: "role is required" })}
+              className="input input-bordered w-full max-w-xs"
+            >
               <option value="">Select...</option>
               <option value="seller">Seller</option>
               <option value="buyer">Buyer</option>
