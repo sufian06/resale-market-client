@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -14,7 +15,8 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { providerLogin, createUser, updateUser } = useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider();
   const [signUpError, setSignUpError] = useState("");
   const [createdUserEmail, setCreatedUserEmail] = useState("");
   const [token] = useToken(createdUserEmail);
@@ -46,6 +48,8 @@ const SignUp = () => {
       });
   };
 
+  
+
   const saveUser = (name, email, role) => {
     const user = { name, email, role };
     fetch("http://localhost:5000/users", {
@@ -59,6 +63,24 @@ const SignUp = () => {
       .then((data) => {
         setCreatedUserEmail(email);
       });
+  };
+
+  const handleGoogleSignUp = (data) => {
+    providerLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success("User Created Successfully");
+        const userInfo = {
+          displayName: data.name,
+        };
+        updateUser(userInfo)
+          .then(() => {
+            saveUser(data.name, data.email, data.role === 'buyer');
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -153,8 +175,8 @@ const SignUp = () => {
           </Link>
         </p>
         <div className="divider">OR</div>
-        <button className="btn btn-outline btn-primary w-full">
-          continue with google
+        <button onClick={handleGoogleSignUp} className="btn btn-outline btn-primary w-full">
+          Signup with Google
         </button>
       </div>
     </div>

@@ -6,6 +6,7 @@ import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
+import Payment from "../../Pages/Dashboard/Payment/Payment";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import ErrorPage from "../../Pages/Shared/ErrorPage/ErrorPage";
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/addproduct',
         element: <AdminRoute><AddProduct/></AdminRoute>
+      },  
+      {
+        path: '/dashboard/payment/:id',
+        element: <AdminRoute><Payment/></AdminRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/bookings/${params.id}`)
       },  
     ]
   }
