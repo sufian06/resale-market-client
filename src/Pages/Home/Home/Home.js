@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import useTitle from "../../../hooks/useTitle";
+import CTA from "../CTA/CTA";
 import ProductCategory from "../ProductCategory/ProductCategory";
 import Banner from "./Banner/Banner";
 
@@ -15,6 +16,7 @@ const Home = () => {
           <ProductCategory key={product._id} product={product} />
         ))}
       </div>
+      <CTA />
     </div>
   );
 };
