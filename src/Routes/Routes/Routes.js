@@ -3,10 +3,12 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
+import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
 import ViewAll from "../../Pages/ViewAll";
+import AdminRoute from "../AdminRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/category/:id',
-        element: <ViewAll />,
+        element: <PrivateRoute><ViewAll /></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
       },
       {
@@ -39,12 +41,16 @@ const router = createBrowserRouter([
     element: <PrivateRoute><DashboardLayout /></PrivateRoute>,
     children: [
       {
-        path: '/dashboard',
+        path: '/dashboard/buyer',
         element: <MyOrders></MyOrders>
       },  
       {
         path: '/dashboard/allusers',
-        element: <AllUsers></AllUsers>
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+      },  
+      {
+        path: '/dashboard/seller',
+        element: <AdminRoute><MyProducts/></AdminRoute>
       },  
     ]
   }

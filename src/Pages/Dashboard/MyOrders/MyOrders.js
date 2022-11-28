@@ -22,7 +22,7 @@ const MyOrders = () => {
   })
   return (
     <div>
-      <h2 className='text-xl font-semibold text-primary mb-5'>My Products</h2>
+      <h2 className='text-xl font-semibold text-primary mb-5'>My Orders</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           {/* <!-- head --> */}
