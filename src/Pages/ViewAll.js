@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import BookingModal from "../components/BookingModal/BookingModal";
 import ProductCard from "../components/ProductCard/ProductCard";
+import useTitle from "../hooks/useTitle";
 
 const ViewAll = () => {
+  useTitle("Product by Category")
   const bikes = useLoaderData();
   const { allproducts } = bikes[0];
 

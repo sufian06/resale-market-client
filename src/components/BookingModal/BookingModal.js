@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../contexts/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const BookingModal = ({ bookingProduct, setBookingProduct }) => {
+  useTitle("Booking Modal")
   const { name, resalePrice } = bookingProduct;
   const { user } = useContext(AuthContext);
 
