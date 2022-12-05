@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import useTitle from "../../../hooks/useTitle";
 
 const AllUsers = () => {
-  useTitle('All Users')
+  useTitle('All Users');
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
@@ -30,6 +30,22 @@ const AllUsers = () => {
       });
   };
 
+  const handleDeleteUser = (user) => {
+    fetch(`https://resale-market-server-zeta.vercel.app/users/${user._id}`, {
+      method: 'DELETE',
+      headers: {
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.deletedCount > 0){
+        refetch();
+        toast.success(`${user.name} role: ${user.role} deleted successfully`)
+      }
+    })
+  }
+
   return (
     <div>
       <h2 className="text-xl font-semibold text-primary mb-5">All Users</h2>
@@ -41,6 +57,7 @@ const AllUsers = () => {
               <th>Name</th>
               <th>Email</th>
               <th>Admin</th>
+              <th>Role</th>
               <th>Delete</th>
             </tr>
           </thead>
@@ -50,6 +67,7 @@ const AllUsers = () => {
                 <th>{i + 1}</th>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
+                <td>{user.role}</td>
                 <td>
                   {user?.role !== "admin" && (
                     <button
@@ -61,7 +79,7 @@ const AllUsers = () => {
                   )}
                 </td>
                 <td>
-                  <button className="btn btn-xs btn-error text-white">
+                  <button onClick={() => handleDeleteUser(user)} className="btn btn-xs btn-error text-white">
                     Delete
                   </button>
                 </td>

@@ -61,6 +61,7 @@ const MyProducts = () => {
               <th>Condition</th>
               <th>Location</th>
               <th>Price</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -79,6 +80,11 @@ const MyProducts = () => {
                 <td>{product.condition}</td>
                 <td>{product.location}</td>
                 <td>$ {product.price}</td>
+                <td>
+                  <label htmlFor="confirmation-modal" className="btn btn-outline btn-sm btn-error">
+                  Unsold
+                  </label>
+                </td>
                 <td>
                   <label onClick={() => setDeletingProduct(product)} htmlFor="confirmation-modal" className="btn btn-outline btn-sm btn-error">
                   Delete

@@ -72,11 +72,13 @@ const SignUp = () => {
         console.log(user);
         toast.success("User Created Successfully");
         const userInfo = {
-          displayName: data.name,
+          name: user.displayName,
+          email: user.email,
+          role: 'buyer'
         };
         updateUser(userInfo)
           .then(() => {
-            saveUser(data.name, data.email, data.role === 'buyer');
+            saveUser(user.displayName, user.email, userInfo.role);
           })
           .catch((err) => console.log(err));
       })

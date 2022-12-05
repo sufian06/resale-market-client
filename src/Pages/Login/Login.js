@@ -46,10 +46,7 @@ const Login = () => {
     providerLogin(googleProvider)
       .then((result) => {
         const user = result.user;
-        console.log(user);
-        if (user) {
-          navigate(from, { replace: true });
-        }
+        setLoginUserEmail(user.email);
       })
       .catch((error) => console.error(error));
   };
